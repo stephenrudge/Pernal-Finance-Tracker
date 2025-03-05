@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Personal Finance Tracker</h1>
+      <!-- Form to add transactions -->
+      <form id="transaction-form">
+        <input
+          type="number"
+          id="amount"
+          placeholder="Amount"
+          step="0.01"
+          required
+        />
+        <input
+          type="text"
+          id="description"
+          placeholder="Description"
+          required
+        />
+        <select id="category" required>
+          <option value="">Select Category</option>
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <input type="date" id="date" required />
+        <button type="submit">Add Transaction</button>
+      </form>
+
+      <!-- Summary -->
+      <div id="summary">
+        <p>Total Income: <span id="total-income">$0.00</span></p>
+        <p>Total Expenses: <span id="total-expenses">$0.00</span></p>
+        <p>Balance: <span id="balance">$0.00</span></p>
+      </div>
+
+      <!-- Transaction List -->
+      <table id="transaction-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="transaction-list"></tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
